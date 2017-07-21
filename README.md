@@ -1,5 +1,9 @@
+
 # DeepLearningModel
-Code of some deep learning models, refering to Yoshua Bengio's book "deep learning".
+
+Code of some deep learning models, referring to Yoshua Bengio's book "deep learning".
+
+# Continuous updating ......
 
 This is my reading notes for Yoshua Bengio's book "deep learning". It mainly contains python code of these models ***which are sorted by the order of chapter.***
 
