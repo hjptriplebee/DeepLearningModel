@@ -53,7 +53,7 @@ if __name__ == "__main__":
     fc7 = fc_layer("fc7", fc6, 84, 10, False)
     prob = tf.nn.softmax(fc7)
 
-    loss = tf.nn.softmax_cross_entropy_with_logits(labels = GTY, logits = prob)
+    loss = tf.reduce_mean(tf.reduce_sum(tf.nn.softmax_cross_entropy_with_logits(labels = GTY, logits = prob)))
     train = tf.train.AdamOptimizer(0.01).minimize(loss)
 
     correct_num = tf.equal(tf.arg_max(prob, 1), tf.arg_max(GTY, 1))
@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
-        for i in range(10000):
+        for i in range(1000000):
             batch_X, batch_Y = data.train.next_batch(batch_size)
             sess.run(train, feed_dict = {GTX: batch_X, GTY: batch_Y})
             if i % 100 == 0:
