@@ -6,7 +6,7 @@
    e-mail: huangjipengnju@gmail.com
    github: https://github.com/hjptriplebee
 '''''''''''''''''''''''''''''''''''''''''''''''''''''
-#An implement of LeNet
+#An implement of CNN
 import tensorflow as tf
 import tensorflow.examples.tutorials.mnist as mnist
 

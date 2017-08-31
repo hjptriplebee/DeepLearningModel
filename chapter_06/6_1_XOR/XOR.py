@@ -26,7 +26,7 @@ train = tf.train.AdamOptimizer(0.01).minimize(loss)
 
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
-    for i in range(500):
+    for i in range(1000):
         for j in range(4):
             sess.run(train, feed_dict={x: np.expand_dims(X[j], 0), y: np.expand_dims(Y[j], 0)})
         loss_ = sess.run(loss, feed_dict={x: X, y: Y})
